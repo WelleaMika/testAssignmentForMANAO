@@ -17,6 +17,11 @@ class UsersController
 
     public function signUp()
     {
+        if(isset($_COOKIE['login'])) 
+        {
+            header("Location: /");
+            die();
+        }
     if (!empty($_POST && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest')) {
         try {
             $user = User::signUp($_POST);
