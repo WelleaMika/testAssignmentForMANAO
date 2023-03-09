@@ -67,8 +67,8 @@ class User
         } elseif (preg_match("/[A-Za-z]/", $password) XOR preg_match("/[0-9]/", $password)) {
             self::$place = 'passwordError';
             throw new InvalidArgumentException('Password must contain at least 1 letter and 1 digit');
-        } elseif (preg_match("/[^a-zA-Z0-9]/", $name)) {
-            self::$place = 'nameError';
+        } elseif (preg_match("/[^a-zA-Z0-9]/", $password)) {
+            self::$place = 'passwordError';
             throw new InvalidArgumentException('Password must contain only numbers and letters');
         }
 
