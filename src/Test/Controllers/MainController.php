@@ -19,6 +19,7 @@ class MainController
         if(!isset($_COOKIE['login']))
         {
             header("Location: /users/login");
+            die();
         }
         
             $name = $_COOKIE['login'];
